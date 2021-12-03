@@ -1,0 +1,47 @@
+package com.company;
+import java.util.ArrayList;
+import java.util.Scanner;
+public class Main {
+
+
+    public static void main(String[] args) {
+        ArrayList<String> storeproduct = new ArrayList<String>();
+        ArrayList<Double> amountproduct = new ArrayList<Double>();
+        ArrayList<String> purchases = new ArrayList<String>();
+        ArrayList<Double> purchaseamount = new ArrayList<Double>();
+        storeproduct.add("Bison Sweater");
+        amountproduct.add(55.99);
+        storeproduct.add("Bison Tee");
+        amountproduct.add(14.99);
+        storeproduct.add("Bison Hoodie");
+        amountproduct.add(23.99);
+        storeproduct.add("Bison Bumpersticker");
+        amountproduct.add(4.99);
+
+        String decision;
+        Scanner input = new Scanner(System.in);
+        String item;
+        double sum = 0.0;
+        int index = -1;
+        do {
+            System.out.println("list items brought?");
+            System.out.println("If you did not buy anything enter no: ");
+            item = input.nextLine();
+            purchases.add(item);
+            for (int i = 0; i < storeproduct.size(); i++) {
+                if (item.equals(storeproduct.get(i))) {
+                    index = i;
+                }
+            }
+            purchaseamount.add(amountproduct.get(index));
+        } while (!item.equalsIgnoreCase("no"));
+
+
+        for (int i = 0; i < purchases.size() - 1; i++) {
+            System.out.println("Items collected: " + purchases.get(i));
+            sum += purchaseamount.get(i);
+        }
+
+        System.out.println("Total Spent: " + sum);
+
+    }
