@@ -1,0 +1,44 @@
+package com.company;
+
+import java.util.Scanner;
+
+
+    public class Main {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            int cent = 0;
+            float changeamount;
+            do {
+                System.out.println("How much change is owed?  ");
+                changeamount = scanner.nextFloat();
+            }while (changeamount <= 0.00);
+
+
+                  int centss = Math.round(changeamount * 100);
+
+
+            while (centss >= 25)
+            { cent++;
+                centss -= 25;
+            }
+                 while (centss >= 10)
+            {
+                    cent++;
+                      centss -= 10;
+            }
+                     while (centss >= 5)
+            {
+                        cent++;
+                           centss -= 5;
+            }
+                          while (centss >= 1)
+            {
+                            cent++;
+                              centss -= 1;
+            }
+
+
+            System.out.println( " exzact coins need: " + cent);
+
+        }
+    }
