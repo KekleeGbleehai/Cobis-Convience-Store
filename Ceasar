@@ -1,0 +1,38 @@
+package com.company;import java.lang.String;import java.util.Scanner;
+
+
+public class Main {
+
+    public static StringBuffer encrypt(String x, int sent) {
+
+        StringBuffer out = new StringBuffer(); for
+                                                (int letter = 0; letter < x.length(); letter++) {
+                                                 if (Character.isUpperCase(x.charAt(letter))) {
+                                                        char cchar = (char) (((int) x.charAt(letter) + sent - 65) % 26 + 65);
+                                                        out.append(cchar);
+                                                 } else {
+                                                       char ch = (char) (((int) x.charAt(letter) +
+                                                        sent - 97) % 26 + 97);
+                                                        out.append(ch);
+            }
+        }
+                                                      return out;
+    }
+
+
+                                  public static void main(String[] args) {
+                                  Scanner in = new Scanner(System.in);
+                                  System.out.print("PlainScript: ");
+                                  String text = in.nextLine();
+                                  System.out.print("what number of rotations do you need ? : ");
+                                  int k = in.nextInt();
+                                  System.out.println("Ciphertext: " + encrypt(text,k) );
+    }
+}
+
+
+
+
+
+
+
