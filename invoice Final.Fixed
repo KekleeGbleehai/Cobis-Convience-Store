@@ -1,0 +1,54 @@
+package com.company; import java.util.ArrayList; import java.util.Scanner; public class Main {
+
+
+    public static void main(String[] args) {
+        ArrayList<String> inventory = new ArrayList<String>();
+        ArrayList<Double> our_price = new ArrayList<Double>();
+        ArrayList<String> archive = new ArrayList<String>();
+        ArrayList<Double> arcprices = new ArrayList<Double>();
+        inventory.add("Bison Sweater");
+        our_price.add(55.99);
+        inventory.add("Bison Tee");
+        our_price.add(14.99);
+        inventory.add("Bison Hoodie");
+        our_price.add(23.99);
+        inventory.add("Bison Bumper sticker");
+        our_price.add(4.99);
+
+        String string;
+        Scanner x = new Scanner(System.in);
+        String picks;
+        double sum = 0.0;
+        int index = -1;
+        do {
+            System.out.println("Hello customer, What item did you buy? when done, enter 'done' ":  ");
+            picks = x.nextLine();
+            archive.add(picks);
+            for (int i = 0; i < inventory.size(); i++) {
+                if (picks.equals(inventory.get(i))) {
+                    index = i;
+                }
+            }
+
+                     arcprices.add(our_price.get(index));
+
+        }            while (!picks.equalsIgnoreCase("no"));
+
+
+
+
+                         for (int i = 0; i < archive.size() - 1; i++) {
+                             System.out.println("purchase arhieve " + archive.get(i));
+                             sum += arcprices.get(i);
+        }
+
+
+
+        System.out.println("Total : " + sum);
+
+    }
+
+
+
+}
+
